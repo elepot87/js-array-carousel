@@ -106,9 +106,6 @@ btnPrev.addEventListener("click", function () {
     activeImg--;
   }
 
-  //    (currentValue - 1 + totalElements) %
-  //      totalElements
-
   //impostare immagine attiva da vedere: reset di quella attuale e impostare la successiva
   document.querySelector(".image-container.active").classList.remove("active");
   document
