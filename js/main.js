@@ -46,6 +46,9 @@ const imgRef = document.querySelector(".images");
 
 const thumbsRef = document.querySelector(".thumbs");
 
+// Indice immagine del carosello attiva
+let activeImg = 1;
+
 // voglio mostrare nell'HTML la struttura utilizzando però le immagini cho nel JS.
 
 for (let i = 0; i < imageCollection.length; i++) {
@@ -60,3 +63,12 @@ for (let i = 0; i < imageCollection.length; i++) {
                 <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
             </div>`;
 }
+
+// Impostare l'immagine e la thumbnail active
+
+// HTML collection e aggiungo la classe active
+document
+  .getElementsByClassName("image-container")
+  [activeImg].classList.add("active");
+
+document.getElementsByClassName("thumb")[activeImg].classList.add("active");
