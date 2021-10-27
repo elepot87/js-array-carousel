@@ -71,7 +71,7 @@ document
 
 document.getElementsByClassName("thumb")[activeImg].classList.add("active");
 
-// Al clic della freccia next devo far andare avanti immagini e thumbails
+// Al clic della freccia NEXT devo far andare avanti immagini e thumbails
 
 const btnNext = document.querySelector(".next");
 
@@ -89,6 +89,31 @@ btnNext.addEventListener("click", function () {
     .getElementsByClassName("image-container")
     [activeImg].classList.add("active");
 
+  //impostare le thumbnails come fatto per le immagini
+  document.querySelector(".thumb.active").classList.remove("active");
+  document.getElementsByClassName("thumb")[activeImg].classList.add("active");
+});
+
+// Al clic della freccia PREV devo far andare indietro immagini e thumbails
+
+const btnPrev = document.querySelector(".prev");
+
+btnPrev.addEventListener("click", function () {
+  //   impedire di andare indietro oltre il numero delle mie img e thumb al click sulla freccia prev
+  if (activeImg === imageCollection[0]) {
+    activeImg = imageCollection[imageCollection.length - 1];
+  } else {
+    activeImg--;
+  }
+
+  //    (currentValue - 1 + totalElements) %
+  //      totalElements
+
+  //impostare immagine attiva da vedere: reset di quella attuale e impostare la successiva
+  document.querySelector(".image-container.active").classList.remove("active");
+  document
+    .getElementsByClassName("image-container")
+    [activeImg].classList.add("active");
   //impostare le thumbnails come fatto per le immagini
   document.querySelector(".thumb.active").classList.remove("active");
   document.getElementsByClassName("thumb")[activeImg].classList.add("active");
