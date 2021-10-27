@@ -82,6 +82,11 @@ btnNext.addEventListener("click", function () {
 
   //impostare immagine attiva da vedere: reset di quella attuale e impostare la successiva
   document.querySelector(".image-container.active").classList.remove("active");
+  document
+    .getElementsByClassName("image-container")
+    [activeImg].classList.add("active");
 
-  //impostare la thumbnail
+  //impostare le thumbnails come fatto per le immagini
+  document.querySelector(".thumb.active").classList.remove("active");
+  document.getElementsByClassName("thumb")[activeImg].classList.add("active");
 });
