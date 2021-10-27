@@ -76,9 +76,12 @@ document.getElementsByClassName("thumb")[activeImg].classList.add("active");
 const btnNext = document.querySelector(".next");
 
 btnNext.addEventListener("click", function () {
-  //aggiornare indice dell'immagine attiva
-  activeImg++;
-  console.log(activeImg);
+  //   impedire di andare oltre il numero delle mie img e thumb al click sulla freccia next
+  if (activeImg === imageCollection.length - 1) {
+    activeImg = 0;
+  } else {
+    activeImg++;
+  }
 
   //impostare immagine attiva da vedere: reset di quella attuale e impostare la successiva
   document.querySelector(".image-container.active").classList.remove("active");
