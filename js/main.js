@@ -101,7 +101,7 @@ const btnPrev = document.querySelector(".prev");
 btnPrev.addEventListener("click", function () {
   //   impedire di andare indietro oltre il numero delle mie img e thumb al click sulla freccia prev
   if (activeImg === 0) {
-    activeImg = 4;
+    activeImg = imageCollection.length - 1;
   } else {
     activeImg--;
   }
