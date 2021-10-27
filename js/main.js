@@ -64,11 +64,24 @@ for (let i = 0; i < imageCollection.length; i++) {
             </div>`;
 }
 
-// Impostare l'immagine e la thumbnail active
-
-// HTML collection e aggiungo la classe active
+// Impostare l'immagine e la thumbnail active --> HTML collection e aggiungo la classe active
 document
   .getElementsByClassName("image-container")
   [activeImg].classList.add("active");
 
 document.getElementsByClassName("thumb")[activeImg].classList.add("active");
+
+// Al clic della freccia next devo far andare avanti immagini e thumbails
+
+const btnNext = document.querySelector(".next");
+
+btnNext.addEventListener("click", function () {
+  //aggiornare indice dell'immagine attiva
+  activeImg++;
+  console.log(activeImg);
+
+  //impostare immagine attiva da vedere: reset di quella attuale e impostare la successiva
+  document.querySelector(".image-container.active").classList.remove("active");
+
+  //impostare la thumbnail
+});
