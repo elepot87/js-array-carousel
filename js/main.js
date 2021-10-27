@@ -46,11 +46,17 @@ const imgRef = document.querySelector(".images");
 
 const thumbsRef = document.querySelector(".thumbs");
 
+// voglio mostrare nell'HTML la struttura utilizzando però le immagini cho nel JS.
+
 for (let i = 0; i < imageCollection.length; i++) {
-  imgRef.innerHTML = `<div class="image-container active">
-                <img src="${imageCollection[0]}" alt="${titleCollection[0]}">
+  imgRef.innerHTML += `<div class="image-container">
+                <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
                 <div class="text">
-                    <h3>${titleCollection[0]}</h3>
-                    <p>${textCollection[0]}</p>
+                    <h3>${titleCollection[i]}</h3>
+                    <p>${textCollection[i]}</p>
                 </div>`;
+
+  thumbsRef.innerHTML += `<div class="thumb">
+                <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+            </div>`;
 }
